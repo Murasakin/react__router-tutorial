@@ -1,6 +1,11 @@
-import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
-import './App.css';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Home from './page-components/Home';
+import About from './page-components/About';
+import Users from './page-components/Users';
+import Header from './components/Header';
+
+import './App.css'
+
 
 function App() {
 	return (
@@ -8,31 +13,20 @@ function App() {
 		<Router>
 			<div>
 
-				<nav>
-					<ul>
-						<li>
-							<Link to="/">Home</Link>
-						</li>
-						<li>
-							<Link to="/about">About</Link>
-						</li>
-						<li>
-							<Link to="/users">Users</Link>
-						</li>
-					</ul>
-				</nav>
+				<Header />
 
 				<Switch>
 					<Route exact path="/">
 						<Home />
 					</Route>
 					<Route path="/about">
-
+						<About />
 					</Route>
 					<Route path="/users">
-
+						<Users />
 					</Route>
 				</Switch>
+
 			</div>
 		</Router>
 
