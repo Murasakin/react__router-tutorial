@@ -39,7 +39,7 @@ function Restricted() {
                 }}>Log out</Button>
             </>
         ) : (
-            <Redirect to="/login"></Redirect>
+            <Redirect to="/login?redirectRestricted"></Redirect>
         )
              
     )

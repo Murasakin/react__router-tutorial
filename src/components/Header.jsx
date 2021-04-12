@@ -2,7 +2,7 @@ import React from 'react';
 import { Navbar, Nav, FormControl, Form, Button } from 'react-bootstrap';
 import { Link, useLocation } from 'react-router-dom';
 
-function Header({ state }) {
+function Header() {
 
     const location = useLocation();
 
@@ -13,7 +13,7 @@ function Header({ state }) {
 
             <Nav className="mr-auto" >
 
-                <Nav.Link as={Link} to="/" eventKey="/" active={location.pathname == "/"}>
+                <Nav.Link as={Link} to="/" active={location.pathname == "/"}>
                     
                 {/* Aqui podemos usar o Nav.Link do bootstrap como se fosse um Link do router-dom.
                 Podemos, inclusive, passar as mesmas propriedades do Link para o Nav.Link e ele funciona normalmente.
@@ -30,12 +30,10 @@ function Header({ state }) {
                 <Nav.Link as={Link} to="/users" active={location.pathname == "/users"}>
                     Users
 				</Nav.Link>
-                
-                <Nav.Link as={Link} to="/restricted" active={location.pathname == "/restricted"}>
-                    Restricted area
-				</Nav.Link>
 
             </Nav>
+
+            <Button as={Link} to={"/restricted"} variant="outline-info">Restricted area</Button>
 
             {/* <Form inline>
                 <FormControl type="text" placeholder="Search" className="mr-sm-2" />

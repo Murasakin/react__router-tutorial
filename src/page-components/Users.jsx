@@ -15,13 +15,13 @@ function Users() {
             <Card.Header>
                 <Nav variant="tabs">
                     <Nav.Item>
-                        <Nav.Link as={Link} to={`${match.url}/daniel`} eventKey="/daniel">Daniel</Nav.Link>
+                        <Nav.Link as={Link} to={`${match.url}/Daniel`} eventKey="/daniel">Daniel</Nav.Link>
                     </Nav.Item>
                     <Nav.Item>
-                        <Nav.Link as={Link} to={`${match.url}/felipe`} eventKey="/felipe">Felipe</Nav.Link>
+                        <Nav.Link as={Link} to={`${match.url}/Felipe`} eventKey="/felipe">Felipe</Nav.Link>
                     </Nav.Item>
                     <Nav.Item>
-                        <Nav.Link as={Link} to={`${match.url}/ana`} eventKey="/ana">Ana</Nav.Link>
+                        <Nav.Link as={Link} to={`${match.url}/Ana`} eventKey="/ana">Ana</Nav.Link>
                     </Nav.Item>
                 </Nav>
             </Card.Header>

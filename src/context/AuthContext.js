@@ -4,9 +4,9 @@ export let auth = {
     isLogged: false, 
     userName: "",
     redirected: false,
-    logIn: function(cb) {
+    logIn: function(name, cb) {
         this.isLogged = true;
-        this.userName = "admin";
+        this.userName = name == null ? "admin" : name;
         setTimeout(cb, 500);
     },
     logOut: function(cb) {

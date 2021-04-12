@@ -11,7 +11,7 @@ function Home() {
         location.search === "?signedout" ? (
             <>
                 <Alert variant="danger">
-                    You have logged out!
+                <p style={{textAlign: 'center'}}>You have logged out.</p>
                 </Alert>
                 <Card
                     bg="light"
