@@ -7,14 +7,19 @@ import Header from './components/Header';
 
 import './App.css'
 import Restricted from './page-components/Restricted';
+import { AuthContext, auth } from './context/AuthContext';
+import LoginPage from './page-components/LoginPage';
+
+
 function App() {
+
 	return (
 
 		<Router>
+			<AuthContext.Provider value={auth}>
 				<div>
 
 					<Header />
-
 					<Switch>
 						<Route exact path="/">
 							<Home />
@@ -28,8 +33,12 @@ function App() {
 						<Route path="/restricted">
 							<Restricted />
 						</Route>
+						<Route path="/login">
+							<LoginPage />
+						</Route>
 					</Switch>
 				</div>
+			</AuthContext.Provider>
 		</Router>
 
 	);

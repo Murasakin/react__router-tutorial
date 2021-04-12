@@ -1,12 +1,19 @@
 import React, { useContext } from 'react';
-import { Card } from 'react-bootstrap';
-import { Redirect } from 'react-router';
+import { Alert, Button, Card } from 'react-bootstrap';
+import { Redirect, useHistory } from 'react-router';
+import { AuthContext } from '../context/AuthContext';
 
 function Restricted() {
 
-    return (
+    const history = useHistory();
 
-        
+    const authValue = useContext(AuthContext);
+
+    function logout() {
+        authValue.logOut(() => {history.push("/?signedout")})
+    }
+
+    return (        
 
         // <Card
         //     bg="light"
@@ -22,8 +29,19 @@ function Restricted() {
         //         </Card.Text>
         //     </Card.Body>
         // </Card>
-
-        <Redirect to="/"></Redirect>     
+        authValue.isLogged ? (
+            <>
+                <Alert variant="success">
+                    <p style={{textAlign: 'center'}}>You are logged in as {authValue.userName}!</p>
+                </Alert>
+                <Button style={{margin: '0 auto', width: '50%'}} block variant="danger" onClick={() => {
+                    logout()
+                }}>Log out</Button>
+            </>
+        ) : (
+            <Redirect to="/login"></Redirect>
+        )
+             
     )
 }
 
